@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Max">
+      <UniqueIdentifier>{e53a2b07-96ff-4075-8881-c6d52059d000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Max\Source Files">
+      <UniqueIdentifier>{fbad0f2d-faaa-4b0b-865c-583fac8ddcb1}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Max\Header Files">
+      <UniqueIdentifier>{92f20462-242f-4a0c-883e-b3c33819b84b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Donut">
+      <UniqueIdentifier>{13848c1a-c7ec-4af4-9d5c-058b3c4849b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Donut\base">
+      <UniqueIdentifier>{c572b7fe-f915-411e-9329-c1946877219e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Donut\export">
+      <UniqueIdentifier>{e7492cb9-0018-4a00-bbc4-c37e61e04895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Donut\export\Source Files">
+      <UniqueIdentifier>{1e8d06a7-77be-48e9-beb1-c4403fae18a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Donut\export\Header Files">
+      <UniqueIdentifier>{f99a17e2-be0d-46b1-b35e-f4d147f47470}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DonutExporter.cpp">
+      <Filter>Max\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DllEntry.cpp">
+      <Filter>Max\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exporters.cpp">
+      <Filter>Donut\export\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\security.cpp">
+      <Filter>Donut\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\stringhelper.cpp">
+      <Filter>Donut\base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DonutExporter.def">
+      <Filter>Max\Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3dsmaxsdk_preinclude.h">
+      <Filter>Max\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Max\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DonutExporter.h">
+      <Filter>Max\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exporters.h">
+      <Filter>Donut\export\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\stringhelper.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Common.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\const.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\exception.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\macro.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\printers.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\security.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Singleton.h">
+      <Filter>Donut\base</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
