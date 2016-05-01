@@ -17,32 +17,26 @@
 #define DONUT_DEBUG_PRINTER
 
 
+// SDK includes
+#include <maxscript\maxscript.h>
+
 // STL Includes
 #include <iostream>
+#include <sstream>
 #include <cstdio>
 
 namespace Donut
 {
-	// Color list
-	#define DEFAULT "\033[0m"
-	#define BLACK "\033[0;30m"
-	#define RED "\033[0;31m"
-	#define GREEN "\033[0;32m"
-	#define ORANGE "\033[0;33m"
-	#define BLUE "\033[0;34m"
-	#define MAGENTA "\033[0;35m"
-	#define CYAN "\033[0;36m"
-	#define WHITE "\033[0;37m"
-
-	#define BOLD_TAG "\e[1m"
-	#define NONBOLD_TAG "\e[0m"
-
 	// Print terms
-	#define PRINT std::cout
-	#define END_PRINT DEFAULT<<std::endl
+	#define END_PRINT std::endl
 
 	// General print macro
-	#define PRINT_GENERAL(COLOR, TYPE, ENONCE) {PRINT<<COLOR<<"["<<TYPE<<"] "<<ENONCE<<END_PRINT;}
+	#define PRINT_GENERAL(FLAG, TYPE, ENONCE)\
+	{\
+		std::stringstream ss;\
+		ss << "[" << FLAG <<"]"<< "["<<TYPE<<"]"<<ENONCE<<END_PRINT;\
+		mprintf(CStr(ss.str().c_str()).ToMSTR());\
+	}
 
 	// General purpose MACROS
 	#if _SILENT
@@ -52,13 +46,13 @@ namespace Donut
 		#define PRINT_ERROR(TYPE, ENONCE) {}
 	#else
 		#if _DEBUG
-		#define PRINT_DEBUG(TYPE, ENONCE) PRINT_GENERAL(BLUE, TYPE, ENONCE)
+		#define PRINT_DEBUG(TYPE, ENONCE) PRINT_GENERAL("DEBUG", TYPE, ENONCE)
 		#else
 		#define PRINT_DEBUG(TYPE, ENONCE) {}
 		#endif
-		#define PRINT_INFO(TYPE, ENONCE) PRINT_GENERAL(GREEN, TYPE, ENONCE)
-		#define PRINT_WARNING(TYPE, ENONCE) PRINT_GENERAL(ORANGE, TYPE, ENONCE)
-		#define PRINT_ERROR(TYPE, ENONCE) PRINT_GENERAL(RED, TYPE, ENONCE)
+		#define PRINT_INFO(TYPE, ENONCE) PRINT_GENERAL("INFO", TYPE, ENONCE)
+		#define PRINT_WARNING(TYPE, ENONCE) PRINT_GENERAL("WARNING", TYPE, ENONCE)
+		#define PRINT_ERROR(TYPE, ENONCE) PRINT_GENERAL("ERROR", TYPE, ENONCE)
 	#endif
 
 }

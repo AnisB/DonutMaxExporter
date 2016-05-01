@@ -27,6 +27,12 @@
     <Filter Include="Donut\export\Header Files">
       <UniqueIdentifier>{f99a17e2-be0d-46b1-b35e-f4d147f47470}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{64036b6f-bc38-43ff-b4fc-6778400e46b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\rapidxml">
+      <UniqueIdentifier>{1f035eab-3da9-48f3-a85d-07c1afb0d1c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DonutExporter.cpp">
@@ -35,14 +41,26 @@
     <ClCompile Include="DllEntry.cpp">
       <Filter>Max\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exporters.cpp">
+    <ClCompile Include="base\stringhelper.cpp">
+      <Filter>Donut\base</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers.cpp">
+      <Filter>Donut\export\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eggexporter.cpp">
+      <Filter>Donut\export\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sugarexporter.cpp">
+      <Filter>Donut\export\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MaxExporter.cpp">
       <Filter>Donut\export\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="base\security.cpp">
       <Filter>Donut\base</Filter>
     </ClCompile>
-    <ClCompile Include="base\stringhelper.cpp">
-      <Filter>Donut\base</Filter>
+    <ClCompile Include="flourexporter.cpp">
+      <Filter>Donut\export\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,9 +77,6 @@
     </ClInclude>
     <ClInclude Include="DonutExporter.h">
       <Filter>Max\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Exporters.h">
-      <Filter>Donut\export\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="base\stringhelper.h">
       <Filter>Donut\base</Filter>
@@ -86,6 +101,33 @@
     </ClInclude>
     <ClInclude Include="base\Singleton.h">
       <Filter>Donut\base</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers.h">
+      <Filter>Donut\export\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eggExporter.h">
+      <Filter>Donut\export\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sugarexporter.h">
+      <Filter>Donut\export\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaxExporter.h">
+      <Filter>Donut\export\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidxml\rapidxml_print.hpp">
+      <Filter>3rd\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidxml\rapidxml.hpp">
+      <Filter>3rd\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidxml\rapidxml_iterators.hpp">
+      <Filter>3rd\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidxml\rapidxml_utils.hpp">
+      <Filter>3rd\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="flourexporter.h">
+      <Filter>Donut\export\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
