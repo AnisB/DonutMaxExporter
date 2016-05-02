@@ -64,6 +64,9 @@ namespace Donut
 			// Build its interface
 			sugarExporter.BuildSugarInterface(currentINode, m_sugarFolder, eggexporter);
 
+			// Apply some modifications on the mesh before the runtime
+			eggexporter.PrepareForRunTime();
+
 			// Exporting the sugar
 			GENERAL_INFO("Exporting " << sugarExporter.m_nodeName);
 			eggexporter.Export();

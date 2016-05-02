@@ -19,6 +19,7 @@ namespace Donut
 
 		// Build the geometry interface form the Mesh
 		void BuildEggInterface(INode* _maxNode, STRING_TYPE& _eggsDirectory);
+		void PrepareForRunTime();
 		void Export();
 
 	public:

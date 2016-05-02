@@ -95,9 +95,42 @@ namespace Donut
 			const TVFace& tvface = m_maxMesh->tvFace[faceIndex];
 			for (int vert = 0; vert < 2; ++vert)
 			{
-				uvPTR[6 * faceIndex + vert * 2] = m_maxMesh->tVerts[tvface.t[vert]].x / 1000.0f;
-				uvPTR[6 * faceIndex + vert * 2 + 1] = m_maxMesh->tVerts[tvface.t[vert]].y / 1000.0f;
+				uvPTR[6 * faceIndex + vert * 2] = m_maxMesh->tVerts[tvface.t[vert]].x;
+				uvPTR[6 * faceIndex + vert * 2 + 1] = m_maxMesh->tVerts[tvface.t[vert]].y;
 			}
+		}
+	}
+	#undef max
+	#undef min
+	void TEggExporter::PrepareForRunTime()
+	{
+		// Fetching the init ptr
+		float* uvPTR = m_vertNormalUV + 6 * m_practicalnbVerts;
+
+		// Computing the boundaries
+		float maxX = -std::numeric_limits<float>::max();
+		float maxY = -std::numeric_limits<float>::max();
+		float minX = std::numeric_limits<float>::max();
+		float minY = std::numeric_limits<float>::max();
+		for (int vert = 0; vert < m_practicalnbVerts; ++vert)
+		{
+			float currentX = uvPTR[2 * vert];
+			minX = currentX < minX ? currentX : minX;
+			maxX = currentX > maxX ? currentX : maxX;
+
+			float currentY = uvPTR[2 * vert + 1];
+			minY = currentY < minY ? currentY : minY;
+			maxY = currentY > maxY ? currentY : maxY;
+		}
+
+		// Normalizing the UV mapping
+		for (int vert = 0; vert < m_practicalnbVerts; ++vert)
+		{
+			float& currentX = uvPTR[2 * vert];
+			float& currentY = uvPTR[2 * vert + 1];
+
+			currentX = (currentX - minX) / (maxX - minX);
+			currentY = (currentY - minY) / (maxY - minY);
 		}
 	}
 
